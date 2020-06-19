@@ -1,8 +1,8 @@
 <?php
 
-require_once __DIR__ . "/library/DaisyconApi/Rest.php";
+require_once __DIR__ . "/library/Daisycon/Api/Client.php";
 
-use CLSystems\DaisyconApi\Client;
+use CLSystems\Daisycon\Api\Client;
 
 	/**
 	 * Basic get example
