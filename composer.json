@@ -1,0 +1,20 @@
+{
+    "name": "clsystems/daisycon-api-client",
+    "type": "library",
+    "description": "Quick Daisycon Api Helper Class",
+    "keywords": [
+        "Daisycon",
+        "Api"
+    ],
+    "authors": [
+        {
+            "name": "CLSystems"
+        }
+    ],
+    "require": {
+        "php": ">=5.5"
+    },
+    "autoload": {
+        "psr-0": { "DaisyconApi\\": "library/" }
+    }
+}
