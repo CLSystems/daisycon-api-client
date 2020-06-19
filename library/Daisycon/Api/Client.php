@@ -1,6 +1,6 @@
 <?php
 
-namespace CLSystems\DaisyconApi;
+namespace CLSystems\Daisycon\Api;
 
 use Exception;
 use stdClass;
