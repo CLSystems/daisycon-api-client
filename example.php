@@ -2,12 +2,12 @@
 
 require_once __DIR__ . "/library/DaisyconApi/Rest.php";
 
-use CLSystems\DaisyconApi\Rest;
+use CLSystems\DaisyconApi\Client;
 
 	/**
 	 * Basic get example
 	 */
-	$oApiCall = new Rest( "USERNAME", "PASSWORD" );
+	$oApiCall = new Client( "USERNAME", "PASSWORD" );
 	foreach ($oApiCall->getAdvertiserIds() as $iAdvertiserId)
 	{
 		$aFilterData = array(
@@ -15,7 +15,7 @@ use CLSystems\DaisyconApi\Rest;
 			'end' => "2014-10-01" 
 		);
 		$sUrl = '/advertisers/' . $iAdvertiserId . '/transactions';
-		foreach ($oApiCall->performCall($sUrl, Rest::REQUEST_GET, $aFilterData) as $oTransaction)
+		foreach ($oApiCall->performCall($sUrl, Client::REQUEST_GET, $aFilterData) as $oTransaction)
 		{
 			var_dump( $oTransaction );
 			break; // stop @ 1
@@ -25,7 +25,7 @@ use CLSystems\DaisyconApi\Rest;
 	/**
 	 * Basic put example
 	 */
-	$oApiCall = new Rest( "USERNAME", "PASSWORD" );
+	$oApiCall = new Client( "USERNAME", "PASSWORD" );
 	foreach ($oApiCall->getAdvertiserIds() as $iAdvertiserId)
 	{
 		$aPutData = array(
@@ -34,14 +34,14 @@ use CLSystems\DaisyconApi\Rest;
 			'disapproved_reason' => 'duplicate',
 		);
 		$sUrl = '/advertisers/' . $iAdvertiserId . '/transactions/95AFBVUK48AFBLU6V3/7K12';
-		$oResult = $oApiCall->performCall($sUrl, Rest::REQUEST_PUT, $aPutData);
+		$oResult = $oApiCall->performCall($sUrl, Client::REQUEST_PUT, $aPutData);
 		var_dump($oResult);
 	}
 
 	/**
 	 * Magic Call not all features supported
 	 */
-	$oApiCall = new Rest( "USERNAME", "PASSWORD" );
+	$oApiCall = new Client( "USERNAME", "PASSWORD" );
 	foreach ($oApiCall->getPublisherIds() as $iPublisherId)
 	{
 		$aFilterData = array(
